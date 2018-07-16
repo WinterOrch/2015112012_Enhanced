@@ -54,17 +54,17 @@ public class UIConstant {
     public final static ImageIcon ICON_SETTING_READY = new ImageIcon(MainWindow.class.getResource("/icon/settings-ready.png"));
     public final static ImageIcon ICON_SETTING_PRESSED = new ImageIcon(MainWindow.class.getResource("/icon/settings-pressed.png"));
 
-    public final static ImageIcon ICON_SYMMETRIC = new ImageIcon(MainWindow.class.getResource("/icon/picture-normal.png"));
-    public final static ImageIcon ICON_SYMMETRIC_READY = new ImageIcon(MainWindow.class.getResource("/icon/picture-ready.png"));
-    public final static ImageIcon ICON_SYMMETRIC_PRESSED = new ImageIcon(MainWindow.class.getResource("/icon/picture-pressed.png"));
+    public final static ImageIcon ICON_SYMMETRIC = new ImageIcon(MainWindow.class.getResource("/icon/symmetric-normal.png"));
+    public final static ImageIcon ICON_SYMMETRIC_READY = new ImageIcon(MainWindow.class.getResource("/icon/symmetric-ready.png"));
+    public final static ImageIcon ICON_SYMMETRIC_PRESSED = new ImageIcon(MainWindow.class.getResource("/icon/symmetric-pressed.png"));
 
-    public final static ImageIcon ICON_EXCHANGE = new ImageIcon(MainWindow.class.getResource("/icon/message-normal.png"));
-    public final static ImageIcon ICON_EXCHANGE_READY = new ImageIcon(MainWindow.class.getResource("/icon/message-ready.png"));
-    public final static ImageIcon ICON_EXCHANGE_PRESSED = new ImageIcon(MainWindow.class.getResource("/icon/message-pressed.png"));
+    public final static ImageIcon ICON_EXCHANGE = new ImageIcon(MainWindow.class.getResource("/icon/exchange-normal.png"));
+    public final static ImageIcon ICON_EXCHANGE_READY = new ImageIcon(MainWindow.class.getResource("/icon/exchange-ready.png"));
+    public final static ImageIcon ICON_EXCHANGE_PRESSED = new ImageIcon(MainWindow.class.getResource("/icon/exchange-pressed.png"));
 
-    public final static ImageIcon ICON_KDC = new ImageIcon(MainWindow.class.getResource("/icon/signiture-normal.png"));
-    public final static ImageIcon ICON_KDC_READY = new ImageIcon(MainWindow.class.getResource("/icon/signiture-ready.png"));
-    public final static ImageIcon ICON_KDC_PRESSED = new ImageIcon(MainWindow.class.getResource("/icon/signiture-pressed.png"));
+    public final static ImageIcon ICON_KDC = new ImageIcon(MainWindow.class.getResource("/icon/kdc-normal.png"));
+    public final static ImageIcon ICON_KDC_READY = new ImageIcon(MainWindow.class.getResource("/icon/kdc-ready.png"));
+    public final static ImageIcon ICON_KDC_PRESSED = new ImageIcon(MainWindow.class.getResource("/icon/kdc-pressed.png"));
 
     public final static URL PLACE_HOLDER = MainWindow.class.getResource("/icon/placeholder.png");
 

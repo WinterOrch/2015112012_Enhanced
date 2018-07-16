@@ -2,6 +2,7 @@ package com.ui;
 
 import com.system.PropertiesLocale;
 import com.system.constant.SystemConstant;
+import com.system.leveldb.Data;
 import com.ui.constant.UIConstant;
 import com.ui.pane.*;
 
@@ -9,6 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.io.IOException;
 
 public class MainWindow {
     public static JFrame frame;
@@ -105,7 +107,11 @@ public class MainWindow {
             @Override
             public void windowClosed(WindowEvent e) {
                 // TODO Auto-generated method stub
-
+                try {
+                    Data.close();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
             }
 
             @Override
@@ -131,6 +137,11 @@ public class MainWindow {
      * created in 0:35 2018/4/30
      */
     public static void main(String[] args) {
+        try {
+            Data.initialize();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         EventQueue.invokeLater(() -> {
             try {
                 MainWindow window = new MainWindow();

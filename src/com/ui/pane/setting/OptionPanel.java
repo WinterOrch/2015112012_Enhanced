@@ -13,7 +13,6 @@ public class OptionPanel extends JPanel {
     private JComboBox<String> languageCombox = new JComboBox<>(SystemConstant.LANGUAGE_LIST);
 
     /**
-     * 构造
      * created in 22:20 2018/4/30
      */
     public OptionPanel(){
@@ -23,7 +22,6 @@ public class OptionPanel extends JPanel {
     }
 
     /**
-     * 初始化
      * created in 22:21 2018/4/30
      */
     private void initialize(){
@@ -32,7 +30,6 @@ public class OptionPanel extends JPanel {
     }
 
     /**
-     * 添加组件
      * created in 22:22 2018/4/30
      */
     private void addComponents(){
@@ -41,7 +38,6 @@ public class OptionPanel extends JPanel {
     }
 
     /**
-     * 生成主界面
      * created in 22:23 2018/4/30
      */
     private JPanel getCenterPanel(){
@@ -78,7 +74,7 @@ public class OptionPanel extends JPanel {
     }
 
     /**
-     * 添加监听事件
+     * Add Listener
      * created in 22:52 2018/4/30
      */
     private void addListener(){

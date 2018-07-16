@@ -16,5 +16,10 @@ public class SystemConstant {
     public final static String EN_PATH_PROPERTY = CURRENT_DIR + File.separator + "config" + File.separator
             + "language-en-ww.properties";
 
+    public final static String CONFIG_DATABASE = CURRENT_DIR + File.separator + "config" + File.separator
+            + "LevelDB";
+
+    public final static String DATABASE_CODE_FORMAT = "UTF-8";
+
     public final static String [ ] LANGUAGE_LIST = {"中文 (zh-CN)","English (en-WW)"};
 }
