@@ -237,7 +237,7 @@ public class SourcePanel extends JPanel {
                             }else {
                                 String identity = inputIdentityText.getText().trim();
 
-                                if(null != Data.get(identity.getBytes())) {
+                                if(null == Data.get(identity.getBytes())) {
                                     Map<String,Object> output = new HashMap<>();
                                     DHPublicKey dhPublicKey = (DHPublicKey) keyMap.get(KeyPairUtility.DH_PUBLIC_KEY);
                                     output.put(KeyPairUtility.DH_PUBLIC_KEY, dhPublicKey);
@@ -282,7 +282,7 @@ public class SourcePanel extends JPanel {
             });
 
             saveButton.addActionListener(e -> {
-                if(keyMap != null && !isKeyGenerated) {
+                if(keyMap != null && isKeyGenerated) {
                     Map<String,Object> output = new HashMap<>();
 
                     DHPublicKey dhPublicKey = (DHPublicKey) keyMap.get(KeyPairUtility.DH_PUBLIC_KEY);

@@ -257,7 +257,7 @@ public class TargetPanel extends JPanel {
         });
 
         saveButton.addActionListener(e -> {
-            if(generatedKeyMap != null && !isKeyGenerated) {
+            if(generatedKeyMap != null && isKeyGenerated) {
                 Map<String,Object> output = new HashMap<>();
 
                 DHPublicKey dhPublicKey = (DHPublicKey) generatedKeyMap.get(KeyPairUtility.DH_PUBLIC_KEY);

@@ -288,7 +288,7 @@ public class LocalPanel extends JPanel {
         });
 
         saveButton.addActionListener(e -> {
-            if(sessionKeyMap != null && !isKeyGenerated) {
+            if(sessionKeyMap != null && isKeyGenerated) {
                 KeyPairUtility.saveSecretKeyFile(sessionKeyMap);
             }
         });
