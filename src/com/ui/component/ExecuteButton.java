@@ -5,10 +5,10 @@ import com.ui.css.RoundBorder;
 
 import javax.swing.*;
 
-public class ExcuteButton extends JButton{
+public class ExecuteButton extends JButton{
     private float strokeWidth;
 
-    public ExcuteButton(String text, float stroke) {
+    public ExecuteButton(String text, float stroke) {
         super(text);
 
         strokeWidth = stroke;

@@ -119,6 +119,7 @@ public class ExchangePanel extends FunctionPanel {
                     ExchangePanel.ExchangePanelMain.removeAll();
                     ExchangePanel.ExchangePanelMain.add(exchangePanelSource);
                     MainWindow.exchangePanel.updateUI();
+                    exchangePanelSource.refreshData();
                 }
             }
         });
@@ -132,6 +133,7 @@ public class ExchangePanel extends FunctionPanel {
                     listPanelLocal.setBackground(UIConstant.PRESSED_BACK_COLOR);
                     ExchangePanel.ExchangePanelMain.removeAll();
                     ExchangePanel.ExchangePanelMain.add(exchangePanelLocal);
+                    exchangePanelLocal.checkConfig();
                     MainWindow.exchangePanel.updateUI();
                 }
             }

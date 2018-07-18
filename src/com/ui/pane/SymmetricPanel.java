@@ -106,7 +106,8 @@ public class SymmetricPanel extends FunctionPanel{
                     listPanelDecrypt.setBackground(UIConstant.NAVI_BAR_BACK_COLOR);
                     SymmetricPanel.symmetricMain.removeAll();
                     SymmetricPanel.symmetricMain.add(symmetricPanelEncrypt);
-                    MainWindow.exchangePanel.updateUI();
+                    symmetricPanelEncrypt.checkConfig();
+                    MainWindow.symmetricPanel.updateUI();
                 }
             }
         });
@@ -119,7 +120,8 @@ public class SymmetricPanel extends FunctionPanel{
                     listPanelDecrypt.setBackground(UIConstant.PRESSED_BACK_COLOR);
                     SymmetricPanel.symmetricMain.removeAll();
                     SymmetricPanel.symmetricMain.add(symmetricPanelDecrypt);
-                    MainWindow.exchangePanel.updateUI();
+                    symmetricPanelDecrypt.checkConfig();
+                    MainWindow.symmetricPanel.updateUI();
                 }
             }
 

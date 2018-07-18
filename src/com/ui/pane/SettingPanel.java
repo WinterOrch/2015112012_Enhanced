@@ -15,7 +15,7 @@ public class SettingPanel extends FunctionPanel {
     private static JPanel panelAbout;
     private static JPanel settingPanelMain;
     private static OptionPanel settingPanelOption;
-    private static JPanel settingPanelAbout;
+    private static AboutPanel settingPanelAbout;
 
     /**
      * 构造
@@ -32,7 +32,7 @@ public class SettingPanel extends FunctionPanel {
     public JPanel getCenterPanel() {
         // 初始化
         settingPanelOption = new OptionPanel();
-        settingPanelAbout = new JPanel();
+        settingPanelAbout = new AboutPanel();
         // 中间面板
         JPanel panelCenter = new JPanel();
         panelCenter.setBackground(UIConstant.MAIN_BACK_COLOR);

@@ -36,12 +36,15 @@ public class UIConstant {
     public final static Font FONT_NORMAL = new Font(getProperty("UI.FONT.FAMILY"), Font.PLAIN, 13);
     // Button
     public final static Font FONT_BUTTON = new Font(getProperty("UI.FONT.FAMILY"), Font.BOLD, 13);
-
+    // TextArea
+    public final static Font FONT_TEXT_AREA = new Font(getProperty("UI.FONT.FAMILY"), Font.PLAIN,18);
+    // URI
+    public final static Font FONT_URI = new Font(getProperty("UI.FONT.FAMILY"), Font.PLAIN, 18);
     /**
      * Size And Color of Navigation Bar
      */
     public final static Color NAVI_BAR_BACK_COLOR = new Color(33, 150, 243);
-    public final static Color PRESSED_BACK_COLOR = new Color(38, 157, 243);
+    public final static Color PRESSED_BACK_COLOR = new Color(48, 168, 243);
     public final static Color LIST_BACK_COLOR = new Color(62, 62, 62);
     public final static Color ROLL_OVER_COLOR = new Color(97, 176, 239);
     public final static int NAVI_BAR_WIDTH = 48;
@@ -66,6 +69,12 @@ public class UIConstant {
     public final static ImageIcon ICON_KDC_READY = new ImageIcon(MainWindow.class.getResource("/icon/kdc-ready.png"));
     public final static ImageIcon ICON_KDC_PRESSED = new ImageIcon(MainWindow.class.getResource("/icon/kdc-pressed.png"));
 
+    public final static ImageIcon QUESTION = new ImageIcon(MainWindow.class.getResource("/icon/help-circle.png"));
+
+    public final static ImageIcon GITHUB = new ImageIcon(MainWindow.class.getResource("/icon/github-circle.png"));
+
+    public final static ImageIcon ICON_GET = new ImageIcon(MainWindow.class.getResource("/icon/down.png"));
+
     public final static URL PLACE_HOLDER = MainWindow.class.getResource("/icon/placeholder.png");
 
     /**
@@ -88,7 +97,11 @@ public class UIConstant {
     public final static Dimension TEXT_FIELD_SIZE_ITEM = new Dimension(525, 24);
     public final static Dimension REVERSED_TEXT_FIELD_SIZE_ITEM = new Dimension(445,24);
     public final static Dimension PROGRESS_BAR_SIZE = new Dimension(825,5);
+    public final static Dimension TEXT_AREA_SIZE = new Dimension(650,200);
+    public final static Dimension TABLE_SIZE = new Dimension(850,400);
     public final static Dimension PICTURE_SIZE = new Dimension(300,200);
+    // Size of Items In Full-Size Window
+    public final static Dimension FULL_TEXT_FIELD_SIZE = new Dimension(600,24);
     // Size of Radio
     public final static Dimension RADIO_SIZE = new Dimension(1300, 60);
     // Size of Advanced Option Pane
