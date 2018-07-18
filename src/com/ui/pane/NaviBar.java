@@ -112,7 +112,7 @@ public class NaviBar extends JPanel{
             //SettingPanel.getContent();
             MainWindow.centerPanel.add(MainWindow.kdcPanel, BorderLayout.CENTER);
             MainWindow.centerPanel.updateUI();
-            com.ui.pane.kdc.KDCPanel.refreshData();
+            //MainWindow.kdcPanel.mainPanel.refreshData();
         });
     }
 

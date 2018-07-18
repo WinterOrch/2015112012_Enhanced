@@ -1,6 +1,5 @@
 package com.ui.component;
 
-import com.system.PropertiesLocale;
 import com.ui.constant.UIConstant;
 
 import javax.swing.*;
@@ -10,7 +9,7 @@ public class TableButton extends JButton{
     private int column;
 
     public TableButton() {
-        super(PropertiesLocale.getProperty("UI.KDC.GET"), UIConstant.ICON_GET);
+        super("Get", UIConstant.ICON_GET);
         this.setPreferredSize(UIConstant.LABLE_SIZE_ITEM);
         this.setFont(UIConstant.FONT_BUTTON);
         this.setFocusable(false);

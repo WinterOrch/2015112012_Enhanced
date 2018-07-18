@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class KDCPanel extends FunctionPanel{
+    public static com.ui.pane.kdc.KDCPanel mainPanel;
+
 
     public KDCPanel() {
         super("kdc");
@@ -18,7 +20,7 @@ public class KDCPanel extends FunctionPanel{
         panelCenter.setLayout(new BorderLayout());
 
         // Initialize
-        com.ui.pane.kdc.KDCPanel mainPanel = new com.ui.pane.kdc.KDCPanel();
+        mainPanel = new com.ui.pane.kdc.KDCPanel();
 
         panelCenter.add(mainPanel,BorderLayout.CENTER);
 

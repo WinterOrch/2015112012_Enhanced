@@ -27,16 +27,16 @@ import java.util.ArrayList;
 public class KDCPanel extends JPanel{
     private Logger logger;
 
-    private static JLabel inputIdentityLabel = new JLabel();
-    private static JTextField inputIdentityText = new JTextField();
-    private static JButton searchButton = new JButton();
+    private JLabel identityLabel = new JLabel();
+    private JTextField inputIdentityText = new JTextField();
+    private JButton searchButton = new JButton();
 
-    private static DefaultTableModel model;
-    private static JTable table;
+    private DefaultTableModel model;
+    private JTable table;
 
-    private static JLabel tip;
+    private JLabel tip;
 
-    private static ArrayList<String> result;
+    private ArrayList<String> result;
 
     public KDCPanel(){
         initialize();
@@ -50,7 +50,7 @@ public class KDCPanel extends JPanel{
         this.setBackground(UIConstant.MAIN_BACK_COLOR);
         this.setLayout(new BorderLayout());
 
-        refreshData();
+        this.refreshData();
     }
 
     private void addComponents(){
@@ -70,11 +70,11 @@ public class KDCPanel extends JPanel{
         secondPanelGridSetting.setBackground(UIConstant.MAIN_BACK_COLOR);
         secondPanelGridSetting.setLayout(new FlowLayout(FlowLayout.CENTER, UIConstant.MAIN_H_GAP, 7));
         
-        inputIdentityLabel.setText(PropertiesLocale.getProperty("UI.EXCHANGE.SOURCE.IDENTITY"));
+        identityLabel.setText(PropertiesLocale.getProperty("UI.EXCHANGE.SOURCE.IDENTITY"));
         searchButton.setText(PropertiesLocale.getProperty("UI.SEARCH"));
                 
         // Set Size
-        inputIdentityLabel.setPreferredSize(UIConstant.LABLE_SIZE_ITEM);
+        identityLabel.setPreferredSize(UIConstant.LABLE_SIZE_ITEM);
         inputIdentityText.setPreferredSize(UIConstant.FULL_TEXT_FIELD_SIZE);
         searchButton.setPreferredSize(UIConstant.LABLE_SIZE_ITEM);
 
@@ -108,12 +108,12 @@ public class KDCPanel extends JPanel{
         scrollPane.setOpaque(true);
 
         // Set Font
-        inputIdentityLabel.setFont(UIConstant.FONT_NORMAL);
+        identityLabel.setFont(UIConstant.FONT_NORMAL);
         inputIdentityText.setFont(UIConstant.FONT_NORMAL);
         searchButton.setFont(UIConstant.FONT_NORMAL);
 
         // Add Components
-        panelGridSetting.add(inputIdentityLabel);
+        panelGridSetting.add(identityLabel);
         panelGridSetting.add(inputIdentityText);
         panelGridSetting.add(searchButton);
 
@@ -178,8 +178,6 @@ public class KDCPanel extends JPanel{
                     JOptionPane.showMessageDialog(MainWindow.frame,PropertiesLocale.getProperty("UI.KDC.TABLE.SEARCH.NONE"),
                             PropertiesLocale.getProperty("UI.MESSAGE.INFO"),JOptionPane.INFORMATION_MESSAGE);
                 }else {
-                    table.getColumnModel().getColumn(1).setCellRenderer(new TableButtonRender(resultLength));
-
                     TableButtonEditor.MyEvent eve = new TableButtonEditor.MyEvent() {
                         @Override
                         public void invoke(ActionEvent e) {
@@ -204,14 +202,14 @@ public class KDCPanel extends JPanel{
                     };
 
                     // Set Render
-                    table.getColumnModel().getColumn(2).setCellRenderer(new TableButtonRender(4));
+                    table.getColumnModel().getColumn(1).setCellRenderer(new TableButtonRender(resultLength));
                     table.getColumnModel().getColumn(1).setCellEditor(new TableButtonEditor(eve));
                 }
             }
         });
     }
 
-    public static void refreshData() {
-        PaddingFrame.setupAutoComplete(inputIdentityText, Output.getKeyList());
+    public void refreshData() {
+        PaddingFrame.setupAutoComplete(this.inputIdentityText, Output.getKeyList());
     }
 }
