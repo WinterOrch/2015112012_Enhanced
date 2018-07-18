@@ -19,7 +19,14 @@ public class SystemConstant {
     public final static String CONFIG_DATABASE = CURRENT_DIR + File.separator + "config" + File.separator
             + "LevelDB";
 
+    public final static String[] SYMMETRIC_ALGORITHM = {"AES","DES","DESede"};
+    public final static int[] SYMMETRIC_KEY_SIZE = {256, 64, 192};
+    public final static String[] SYMMETRIC_MODEL = {"ECB","CBC"};
+    public final static String[] SYMMETRIC_PADDING_METHOD = {"PKCS5Padding ","NoPadding"};
+
+    public final static String SYMMETRIC_EXTENSION = "env";
+
     public final static String DATABASE_CODE_FORMAT = "UTF-8";
 
-    public final static String [ ] LANGUAGE_LIST = {"中文 (zh-CN)","English (en-WW)"};
+    public final static String[] LANGUAGE_LIST = {"中文 (zh-CN)","English (en-WW)"};
 }
