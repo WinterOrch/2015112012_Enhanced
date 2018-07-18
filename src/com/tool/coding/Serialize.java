@@ -2,10 +2,10 @@ package com.tool.coding;
 
 import java.io.*;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class Serialize {
-
-    public byte[] map2Byte (Map<String,Object> map) {
+    public static byte[] map2Byte (Map<String,Object> map) {
         byte[] bytes = null;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         try {
@@ -22,7 +22,7 @@ public class Serialize {
         return bytes;
     }
 
-    public Map<String,Object> byte2Map (byte[] bytes) {
+    public static Map<String,Object> byte2Map (byte[] bytes) {
         Map<String,Object> obj = null;
         try {
             ByteArrayInputStream bis = new ByteArrayInputStream (bytes);

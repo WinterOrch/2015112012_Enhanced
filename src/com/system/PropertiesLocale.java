@@ -40,6 +40,19 @@ public class PropertiesLocale {
         }
     }
 
+    public static String getConfig(String key) {
+        Properties pps = new Properties();
+        try {
+            InputStream in = new BufferedInputStream(new FileInputStream(SystemConstant.CONFIG_PROPERTY));
+            pps.load(in);
+            return pps.getProperty(key);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public static String getProperty(String key){
         Properties pps = new Properties();
         if(locale==2){
@@ -77,6 +90,21 @@ public class PropertiesLocale {
             props.load(in);
             OutputStream fos = new FileOutputStream(SystemConstant.CONFIG_PROPERTY);
             props.setProperty("LANGUAGE", language);
+            props.store(fos, "Update value");
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Error in updating language config files");
+        }
+    }
+
+    public static void changeAlgorithm(String type, String name){
+        Properties props = new Properties();
+        try {
+            InputStream in = new BufferedInputStream(new FileInputStream(SystemConstant.CONFIG_PROPERTY));
+            props.load(in);
+            OutputStream fos = new FileOutputStream(SystemConstant.CONFIG_PROPERTY);
+            props.setProperty(type, name);
             props.store(fos, "Update value");
             fos.close();
         } catch (IOException e) {

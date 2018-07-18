@@ -2,8 +2,8 @@ package com.tool.security.encrypt;
 
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
+import java.io.*;
+import java.security.*;
 
 public class SymEncrypt {
     /**
@@ -33,6 +33,40 @@ public class SymEncrypt {
     }
 
     /**
+     * File Crypt
+     * @param CipherMode    Encrypt:   Cipher.ENCRYPT_MODE
+     *                       Decrypt:   Cipher.DECRYPT_MODE
+     * @param srcFile       File to be encrypted
+     * @param desFile       FileStream Output Destination
+     * @param algorithm     Encryption Algorithm Utilized
+     * @param mod           Encryption Model
+     * @param padding       Padding Method
+     */
+    public static void crypt(int CipherMode, File srcFile, File desFile, Key key, String algorithm, String mod, String padding)
+            throws IOException, NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException {
+        Cipher cipher = Cipher.getInstance(algorithm + "/" + mod + "/" + padding, "BC");
+        cipher.init(Cipher.ENCRYPT_MODE, key);
+
+        FileInputStream fis = null;
+        FileOutputStream fos = null;
+        try {
+            fis = new FileInputStream(srcFile);
+            fos = new FileOutputStream(mkdirFiles(desFile));
+
+            crypt(fis, fos, cipher);
+        } catch (GeneralSecurityException e) {
+            e.printStackTrace();
+        } finally {
+            if (fis != null) {
+                fis.close();
+            }
+            if (fos != null) {
+                fos.close();
+            }
+        }
+    }
+
+    /**
      * Decrypt
      * @param content       Cipher text
      * @param secretKey     Secret Key Input
@@ -56,5 +90,39 @@ public class SymEncrypt {
         }
 
         return null;
+    }
+
+    private static File mkdirFiles(File filePath) throws IOException {
+        if (!filePath.getParentFile().exists()) {
+            filePath.getParentFile().mkdirs();
+        }
+        filePath.createNewFile();
+
+        return filePath;
+    }
+
+    private static void crypt(InputStream in, OutputStream out, Cipher cipher) throws IOException, GeneralSecurityException {
+        int blockSize = cipher.getBlockSize() * 1000;
+        int outputSize = cipher.getOutputSize(blockSize);
+
+        byte[] inBytes = new byte[blockSize];
+        byte[] outBytes = new byte[outputSize];
+
+        int inLength = 0;
+        boolean more = true;
+        while (more) {
+            inLength = in.read(inBytes);
+            if (inLength == blockSize) {
+                int outLength = cipher.update(inBytes, 0, blockSize, outBytes);
+                out.write(outBytes, 0, outLength);
+            } else {
+                more = false;
+            }
+        }
+        if (inLength > 0)
+            outBytes = cipher.doFinal(inBytes, 0, inLength);
+        else
+            outBytes = cipher.doFinal();
+        out.write(outBytes);
     }
 }

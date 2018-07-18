@@ -48,7 +48,7 @@ public class DiffieHellman {
      * created in 14:51 2018/7/14
      */
     public static Map<String,Object> generateTargetKeyPair(String password, byte[] sourcePublicKey) throws Exception {
-        KeyFactory keyFactory = KeyFactory.getInstance("DH");
+        KeyFactory keyFactory = KeyFactory.getInstance("DH","BC");
 
         // Generate KeySpec According to Source Public Key And Generate Param of The Key
         X509EncodedKeySpec keySpec = new X509EncodedKeySpec(sourcePublicKey);
@@ -56,7 +56,7 @@ public class DiffieHellman {
         DHParameterSpec dhPublicKeyParams = sourcePublic.getParams();
 
         // Initialize Key Pair Generator
-        KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("DH");
+        KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("DH","BC");
         keyPairGenerator.initialize(dhPublicKeyParams, new SecureRandom(password.getBytes()));
 
         // Generate Key Pair
@@ -123,8 +123,8 @@ public class DiffieHellman {
         System.out.println("Target Public：" + HexConver.byte2HexStr(target_public_key, target_public_key.length));
         System.out.println("Target Private：" + HexConver.byte2HexStr(target_private_key, target_private_key.length));
 
-        source_session_key = getSessionKey(generateSessionKey(target_public_key, source_private_key, "AES"),"AES");
-        target_session_key = getSessionKey(generateSessionKey(source_public_key, target_private_key, "AES"),"AES");
+        source_session_key = getSessionKey(generateSessionKey(target_public_key, source_private_key, "AES"),"AES").getEncoded();
+        target_session_key = getSessionKey(generateSessionKey(source_public_key, target_private_key, "AES"),"AES").getEncoded();
 
         System.out.println("Source Session：" + HexConver.byte2HexStr(source_session_key, source_session_key.length));
         System.out.println("Target Session：" + HexConver.byte2HexStr(target_session_key, target_session_key.length));

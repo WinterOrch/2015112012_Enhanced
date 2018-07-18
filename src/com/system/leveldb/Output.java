@@ -14,7 +14,7 @@ public class Output {
      * Get All KeyID From Data Base
      * created in 21:17 2018/7/15
      */
-    public ArrayList<String> getKeyList() {
+    public static ArrayList<String> getKeyList() {
         DBIterator iterator = iterator();
 
         ArrayList<String> key = new ArrayList<>();
@@ -39,7 +39,7 @@ public class Output {
      * Search For Results According to Clue
      * created in 21:49 2018/7/15
      */
-    public ArrayList<String> getSearchResult(String clue) {
+    public static ArrayList<String> getSearchResult(String clue) {
         DBIterator iterator = iterator();
 
         ArrayList<String> key = new ArrayList<>();
@@ -56,16 +56,5 @@ public class Output {
         }
 
         return key;
-    }
-
-    public static void main(String[] args) {
-        String line = "good12";
-
-        String[] tt=line.split("\\s+");
-        for(String s:tt)
-        {
-            System.out.println(s);
-        }
-        System.out.println("#####");
     }
 }
