@@ -15,7 +15,6 @@ import java.io.IOException;
 public class MainWindow {
     public static JFrame frame;
 
-    public static JPanel mainPanel;
     public static JPanel centerPanel;
     public static ExchangePanel exchangePanel;
     public static SymmetricPanel symmetricPanel;
@@ -54,7 +53,7 @@ public class MainWindow {
         frame.setTitle(SystemConstant.APP_NAME + "  -  " + SystemConstant.APP_VERSION);
         frame.setIconImage(UIConstant.IMAGE_ICON);
         frame.setBackground(UIConstant.MAIN_BACK_COLOR);
-        mainPanel = new JPanel(true);
+        JPanel mainPanel = new JPanel(true);
         mainPanel.setBackground(Color.white);
         mainPanel.setLayout(new BorderLayout());
 
@@ -106,7 +105,7 @@ public class MainWindow {
 
             @Override
             public void windowClosed(WindowEvent e) {
-                // TODO Auto-generated method stub
+                // Close LevelDB
                 try {
                     Data.close();
                 } catch (IOException e1) {
@@ -137,11 +136,14 @@ public class MainWindow {
      * created in 0:35 2018/4/30
      */
     public static void main(String[] args) {
+        // Initialize LevelDB
         try {
             Data.initialize();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        // Activate Main Window
         EventQueue.invokeLater(() -> {
             try {
                 MainWindow window = new MainWindow();
