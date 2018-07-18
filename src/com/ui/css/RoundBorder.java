@@ -9,7 +9,6 @@ import java.awt.*;
  *      close.setOpaque(false);
  *      close.setBorder(new RoundBorder());             //Black Border
  *      close.setBorder(new RoundBorder(Color.RED));    //Color Border
- *
  * @author Monsoons
  * Modified by Frankel.Y
  */
