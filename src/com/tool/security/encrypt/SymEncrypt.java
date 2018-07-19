@@ -45,10 +45,11 @@ public class SymEncrypt {
     public static void crypt(int CipherMode, File srcFile, File desFile, Key key, String algorithm, String mod, String padding)
             throws IOException, NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException {
         Cipher cipher = Cipher.getInstance(algorithm + "/" + mod + "/" + padding, "BC");
-        cipher.init(Cipher.ENCRYPT_MODE, key);
+        cipher.init(CipherMode, key);
 
         FileInputStream fis = null;
         FileOutputStream fos = null;
+
         try {
             fis = new FileInputStream(srcFile);
             fos = new FileOutputStream(mkdirFiles(desFile));

@@ -3,6 +3,7 @@ package com.ui.pane.symmetric;
 import com.system.PropertiesLocale;
 import com.system.constant.SystemConstant;
 import com.tool.coding.HexConver;
+import com.tool.file.FileType;
 import com.tool.security.KeyPairUtility;
 import com.tool.security.encrypt.SymEncrypt;
 import com.ui.MainWindow;
@@ -399,7 +400,6 @@ public class DecryptPanel extends JPanel {
                         filter = new FileNameExtensionFilter(
                                 "." + SystemConstant.SYMMETRIC_EXTENSION, SystemConstant.SYMMETRIC_EXTENSION);
                         chooser.setFileFilter(filter);
-
                         int option = chooser.showSaveDialog(null);
                         if(option==JFileChooser.APPROVE_OPTION){
                             outputFile = chooser.getSelectedFile();
@@ -442,6 +442,25 @@ public class DecryptPanel extends JPanel {
                                 logger.error("NoSuchProviderException: BC");
                             }
 
+                            String newExtension = FileType.getFileType(outputFile);
+                            System.out.println(newExtension);
+                            if(FileType.getFileType(outputFile) != null) {
+                                String path = outputFile.getParent();
+                                String oldName = outputFile.getName();
+                                String newName = oldName.substring(0, oldName.lastIndexOf(".")) + "."+newExtension;
+                                File newFile = new File(path,newName);
+
+                                boolean flag = outputFile.renameTo(newFile);
+                                if(!flag)
+                                    logger.error("Renaming Failed");
+
+                                /*
+                                try {
+                                    FileType.copyFileUsingFileChannels(outputFile,newFile);
+                                } catch (IOException e1) {
+                                    logger.error(e1.toString());
+                                }*/
+                            }
                             tip.setText(PropertiesLocale.getProperty("UI.SYMMETRIC.ENCRYPT.OUTPUT.SUCCESS"));
                             progressBar.setValue(100);
                         }else {

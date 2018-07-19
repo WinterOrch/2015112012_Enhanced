@@ -27,6 +27,10 @@ public class KDCPanel extends FunctionPanel{
         return panelCenter;
     }
 
+    public void refresh() {
+        mainPanel.refreshData();
+    }
+
     @Override
     public void addListener() {
 
