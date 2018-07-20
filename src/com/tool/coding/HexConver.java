@@ -2,6 +2,11 @@ package com.tool.coding;
 
 import java.util.Locale;
 
+/**
+ * 转码
+ * Created in 23:27 2018/5/19
+ * Modified by Frankel.Y
+ */
 public class HexConver {
     private final static char[] mChars = "0123456789ABCDEF".toCharArray();
     private final static String mHexStr = "0123456789ABCDEF";
@@ -80,9 +85,8 @@ public class HexConver {
      * @return byte[]
      */
     public static byte[] hexStr2Bytes(String src){
-        /*对输入值进行规范化整理*/
         src = src.trim().replace(" ", "").toUpperCase(Locale.US);
-        //处理值初始化
+
         int m,n;
         int iLen=src.length()/2; //计算长度
         byte[] ret = new byte[iLen]; //分配存储空间
@@ -112,23 +116,6 @@ public class HexConver {
             else // 低位在前面补00
                 str.append("\\u00");
             str.append(strHex);
-        }
-        return str.toString();
-    }
-
-    /**
-     * unicode的String转换成String的字符串
-     */
-    public static String unicodeToString(String hex){
-        int t = hex.length() / 6;
-        int iTmp;
-        StringBuilder str = new StringBuilder();
-        for (int i = 0; i < t; i++){
-            String s = hex.substring(i * 6, (i + 1) * 6);
-            // 将16进制的string转为int
-            iTmp = (Integer.valueOf(s.substring(2, 4), 16) << 8) | Integer.valueOf(s.substring(4), 16);
-            // 将int转换为字符
-            str.append(new String(Character.toChars(iTmp)));
         }
         return str.toString();
     }

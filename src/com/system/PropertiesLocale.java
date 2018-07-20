@@ -40,6 +40,10 @@ public class PropertiesLocale {
         }
     }
 
+    /**
+     * Get Config Information From Properties File
+     * created in 20:42 2018/4/30
+     */
     public static String getConfig(String key) {
         Properties pps = new Properties();
         try {
@@ -53,6 +57,10 @@ public class PropertiesLocale {
         }
     }
 
+    /**
+     * Get Property From Properties File
+     * created in 20:44 2018/4/30
+     */
     public static String getProperty(String key){
         Properties pps = new Properties();
         if(locale==2){
@@ -98,6 +106,10 @@ public class PropertiesLocale {
         }
     }
 
+    /**
+     * Change Algorithm And Rewrite The Config File
+     * created in 16:13 2018/7/15
+     */
     public static void changeAlgorithm(String type, String name){
         Properties props = new Properties();
         try {

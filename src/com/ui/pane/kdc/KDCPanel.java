@@ -83,6 +83,7 @@ public class KDCPanel extends JPanel{
         String[] tableTitles = {PropertiesLocale.getProperty("UI.KDC.TABLE.IDENTITY"),
                 PropertiesLocale.getProperty("UI.KDC.TABLE.GET")};
 
+        // Get Table Model
         model = new DefaultTableModel(tableData,tableTitles);
 
         table = new JTable(model);
@@ -120,7 +121,7 @@ public class KDCPanel extends JPanel{
         panelGridSetting.add(scrollPane);
 
         centerPanel.add(panelGridSetting);
-        //centerPanel.add(secondPanelGridSetting);
+
         return centerPanel;
     }
 
@@ -201,7 +202,7 @@ public class KDCPanel extends JPanel{
                         }
                     };
 
-                    // Set Render
+                    // Set Render And Editor To Activate Buttons
                     table.getColumnModel().getColumn(1).setCellRenderer(new TableButtonRender(resultLength));
                     table.getColumnModel().getColumn(1).setCellEditor(new TableButtonEditor(eve));
                 }

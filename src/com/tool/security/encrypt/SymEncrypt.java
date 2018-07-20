@@ -44,6 +44,7 @@ public class SymEncrypt {
      */
     public static void crypt(int CipherMode, File srcFile, File desFile, Key key, String algorithm, String mod, String padding)
             throws IOException, NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException {
+
         Cipher cipher = Cipher.getInstance(algorithm + "/" + mod + "/" + padding, "BC");
         cipher.init(CipherMode, key);
 
@@ -93,6 +94,7 @@ public class SymEncrypt {
         return null;
     }
 
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     private static File mkdirFiles(File filePath) throws IOException {
         if (!filePath.getParentFile().exists()) {
             filePath.getParentFile().mkdirs();

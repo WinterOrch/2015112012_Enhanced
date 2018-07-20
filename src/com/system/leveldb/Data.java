@@ -32,28 +32,6 @@ public class Data {
 
     /**
      * Usage:
-     WriteBatch batch = Data.createWriteBatch();
-     try {
-     batch.delete(bytes("Denver"));
-     batch.put(bytes("Tampa"), bytes("green"));
-     batch.put(bytes("London"), bytes("red"));
-
-     Data.write(batch);
-     } finally {
-     // Make sure you close the batch to avoid resource leaks.
-     batch.close();
-     }
-     * created in 13:14 2018/6/16
-     */
-    public static WriteBatch createWriteBatch() {
-        return dataBase.createWriteBatch();
-    }
-    public static void write(WriteBatch batch) {
-        dataBase.write(batch);
-    }
-
-    /**
-     * Usage:
      Data.delete(key);
      * created in 13:21 2018/6/16
      */
@@ -85,7 +63,7 @@ public class Data {
      }
      * created in 13:37 2018/6/16
      */
-    public static DBIterator iterator() {
+    static DBIterator iterator() {
         return dataBase.iterator();
     }
 

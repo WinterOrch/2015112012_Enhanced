@@ -10,14 +10,11 @@ public class TableButtonEditor extends DefaultCellEditor{
     private TableButton button;
     private MyEvent event;
 
-    public TableButtonEditor() {
+    private TableButtonEditor() {
         super(new JTextField());
         this.setClickCountToStart(1);
         button = new TableButton();
-        button.addActionListener(e -> {
-            //这里调用自定义的事件处理方法
-            event.invoke(e);
-        });
+        button.addActionListener(e -> event.invoke(e));
 
     }
 
@@ -29,8 +26,6 @@ public class TableButtonEditor extends DefaultCellEditor{
     @Override
     public Component getTableCellEditorComponent(JTable table, Object value,
                                                  boolean isSelected, int row, int column) {
-//      setClickCountToStart(1);
-//将这个被点击的按钮所在的行和列放进button里面
         button.setRow(row);
         button.setColumn(column);
         return button;

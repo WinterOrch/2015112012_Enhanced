@@ -9,6 +9,11 @@ import java.util.Arrays;
 
 import static com.system.leveldb.Data.iterator;
 
+/**
+ * Data Base Ops
+ * @author Frankel.Y
+ * Created in 21:16 2018/7/15
+ */
 public class Output {
     /**
      * Get All KeyID From Data Base

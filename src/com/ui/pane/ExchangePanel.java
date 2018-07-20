@@ -78,7 +78,7 @@ public class ExchangePanel extends FunctionPanel {
         ExchangePanelMain.setBackground(UIConstant.MAIN_BACK_COLOR);
         ExchangePanelMain.setLayout(new BorderLayout());
         ExchangePanelMain.add(exchangePanelSource);
-        //TODO
+
         panelCenter.add(panelList, BorderLayout.WEST);
         panelCenter.add(ExchangePanelMain, BorderLayout.CENTER);
 

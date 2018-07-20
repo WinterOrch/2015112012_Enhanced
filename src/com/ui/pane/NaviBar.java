@@ -17,7 +17,9 @@ public class NaviBar extends JPanel{
     private static NaviIconButton exchangeButton;
     private static NaviIconButton symEncryptButton;
     private static NaviIconButton kdcButton;
+    private static NaviIconButton caeserButton;
     private static NaviIconButton settingButton;
+
 
     public NaviBar() {
         initialize();
@@ -49,12 +51,15 @@ public class NaviBar extends JPanel{
                 UIConstant.ICON_SYMMETRIC_READY, PropertiesLocale.getProperty("UI.SYMMETRIC.TITLE"));
         kdcButton = new NaviIconButton(UIConstant.ICON_KDC, UIConstant.ICON_KDC_PRESSED,
                 UIConstant.ICON_KDC_READY, PropertiesLocale.getProperty("UI.KDC.TITLE"));
+        caeserButton = new NaviIconButton(UIConstant.ICON_CAESER, UIConstant.ICON_CAESER_PRESSED,
+                UIConstant.ICON_CAESER_READY, PropertiesLocale.getProperty("UI.CAESER.TITLE"));
         settingButton = new NaviIconButton(UIConstant.ICON_SETTING, UIConstant.ICON_SETTING_PRESSED,
                 UIConstant.ICON_SETTING_READY, PropertiesLocale.getProperty("UI.SETTING.TITLE"));
 
         upPanel.add(exchangeButton);
         upPanel.add(symEncryptButton);
         upPanel.add(kdcButton);
+        upPanel.add(caeserButton);
 
         downPanel.add(settingButton, BorderLayout.SOUTH);
         this.add(upPanel);
@@ -67,6 +72,7 @@ public class NaviBar extends JPanel{
             //TODO
             symEncryptButton.setIcon(UIConstant.ICON_SYMMETRIC);
             kdcButton.setIcon(UIConstant.ICON_KDC);
+            caeserButton.setIcon(UIConstant.ICON_CAESER);
             settingButton.setIcon(UIConstant.ICON_SETTING);
 
             MainWindow.centerPanel.removeAll();
@@ -80,6 +86,7 @@ public class NaviBar extends JPanel{
             //TODO
             symEncryptButton.setIcon(UIConstant.ICON_SYMMETRIC_PRESSED);
             kdcButton.setIcon(UIConstant.ICON_KDC);
+            caeserButton.setIcon(UIConstant.ICON_CAESER);
             settingButton.setIcon(UIConstant.ICON_SETTING);
 
             MainWindow.centerPanel.removeAll();
@@ -92,6 +99,7 @@ public class NaviBar extends JPanel{
             exchangeButton.setIcon(UIConstant.ICON_EXCHANGE);
             symEncryptButton.setIcon(UIConstant.ICON_SYMMETRIC);
             kdcButton.setIcon(UIConstant.ICON_KDC);
+            caeserButton.setIcon(UIConstant.ICON_CAESER);
             //TODO
             settingButton.setIcon(UIConstant.ICON_SETTING_PRESSED);
 
@@ -105,6 +113,7 @@ public class NaviBar extends JPanel{
             exchangeButton.setIcon(UIConstant.ICON_EXCHANGE);
             symEncryptButton.setIcon(UIConstant.ICON_SYMMETRIC);
             kdcButton.setIcon(UIConstant.ICON_KDC_PRESSED);
+            caeserButton.setIcon(UIConstant.ICON_CAESER);
             //TODO
             settingButton.setIcon(UIConstant.ICON_SETTING);
 
@@ -113,6 +122,18 @@ public class NaviBar extends JPanel{
             MainWindow.centerPanel.add(MainWindow.kdcPanel, BorderLayout.CENTER);
             MainWindow.centerPanel.updateUI();
             //MainWindow.kdcPanel.refresh();
+        });
+
+        caeserButton.addActionListener(e -> {
+            exchangeButton.setIcon(UIConstant.ICON_EXCHANGE);
+            symEncryptButton.setIcon(UIConstant.ICON_SYMMETRIC);
+            kdcButton.setIcon(UIConstant.ICON_KDC);
+            caeserButton.setIcon(UIConstant.ICON_CAESER_PRESSED);
+            settingButton.setIcon(UIConstant.ICON_SETTING);
+
+            MainWindow.centerPanel.removeAll();
+            MainWindow.centerPanel.add(MainWindow.caeserPanel, BorderLayout.CENTER);
+            MainWindow.centerPanel.updateUI();
         });
     }
 
@@ -126,5 +147,6 @@ public class NaviBar extends JPanel{
         symEncryptButton.setToolTipText(PropertiesLocale.getProperty("UI.SYMMETRIC.TITLE"));
         kdcButton.setToolTipText(PropertiesLocale.getProperty("UI.KDC.TITLE"));
         settingButton.setToolTipText(PropertiesLocale.getProperty("UI.SETTING.TITLE"));
+        caeserButton.setToolTipText(PropertiesLocale.getProperty("UI.CAESER.TITLE"));
     }
 }

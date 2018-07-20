@@ -87,6 +87,9 @@ public class DiffieHellman {
         PKCS8EncodedKeySpec pkcs8EncodedKeySpec = new PKCS8EncodedKeySpec(keyPrivate);
         PrivateKey privateKey = keyFactory.generatePrivate(pkcs8EncodedKeySpec);
 
+        System.out.println(keyPublic.length);
+        System.out.println(keyPrivate.length);
+
         // KeyAgreement Perform Encryption
         KeyAgreement keyAgreement = KeyAgreement.getInstance("DH", "BC");    // Bouncy Castle As A Provider
         keyAgreement.init(privateKey);

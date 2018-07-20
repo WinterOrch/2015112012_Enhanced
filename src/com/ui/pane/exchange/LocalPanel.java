@@ -207,6 +207,8 @@ public class LocalPanel extends JPanel {
                 if(publicKeyMap.containsKey(KeyPairUtility.DH_PUBLIC_KEY)) {
                     isPublicKeyLoaded = true;
                     tip.setText(PropertiesLocale.getProperty("UI.EXCHANGE.LOCAL.PUBLIC_KEY.SUCCESS"));
+                    inputPublicKeyText.setText(HexConver.byte2HexStr(KeyPairUtility.getDHPublicKey(publicKeyMap),
+                            KeyPairUtility.getDHPublicKey(publicKeyMap).length));
                 }else {
                     isPublicKeyLoaded = false;
                     tip.setText(PropertiesLocale.getProperty("UI.EXCHANGE.LOCAL.PUBLIC_KEY.UNMATCHED"));
@@ -226,6 +228,8 @@ public class LocalPanel extends JPanel {
                 if(privateKeyMap.containsKey(KeyPairUtility.DH_PRIVATE_KEY)) {
                     isPrivateKeyLoaded = true;
                     tip.setText(PropertiesLocale.getProperty("UI.EXCHANGE.LOCAL.PRIVATE_KEY.SUCCESS"));
+                    inputPrivateKeyText.setText(HexConver.byte2HexStr(KeyPairUtility.getDHPrivateKey(privateKeyMap),
+                            KeyPairUtility.getDHPrivateKey(privateKeyMap).length));
                 }else {
                     isPrivateKeyLoaded = false;
                     tip.setText(PropertiesLocale.getProperty("UI.EXCHANGE.LOCAL.PRIVATE_KEY.UNMATCHED"));
@@ -262,11 +266,12 @@ public class LocalPanel extends JPanel {
                 byte[] private_key = KeyPairUtility.getDHPrivateKey(privateKeyMap);
 
                 try {
-                    sessionKeyMap = DiffieHellman.generateSessionKey(public_key,private_key,PropertiesLocale.getProperty("SYMMETRIC.ALGORITHM"));
+                    sessionKeyMap = DiffieHellman.generateSessionKey(public_key,private_key,PropertiesLocale.getConfig("SYMMETRIC.ALGORITHM"));
                 } catch (Exception e1) {
-                    logger.error(e1 + "Algorithm Used When Generating Session Key:{}",
-                            PropertiesLocale.getConfig("SYMMETRIC.ALGORITHM"));
+                    e1.printStackTrace();
                 }
+                System.out.println(HexConver.byte2HexStr(public_key,public_key.length));
+                System.out.println(HexConver.byte2HexStr(private_key,private_key.length));
 
                 if(sessionKeyMap != null) {
                     tip.setText(PropertiesLocale.getProperty("UI.EXCHANGE.LOCAL.SESSION_KEY.SUCCESS"));

@@ -2,8 +2,13 @@ package com.tool.coding;
 
 import java.io.*;
 import java.util.Map;
-import java.util.logging.Logger;
 
+/**
+ * Read Objects From/To Bytes
+ * @author Frankel.Y
+ * Created in 14:24 2018/7/17
+ * Modified by
+ */
 public class Serialize {
     public static byte[] map2Byte (Map<String,Object> map) {
         byte[] bytes = null;

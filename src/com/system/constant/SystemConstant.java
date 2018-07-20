@@ -4,8 +4,8 @@ import java.io.File;
 
 public class SystemConstant {
 
-    public final static String APP_NAME = "Malice";
-    public final static String APP_VERSION = "V_0.10";
+    public final static String APP_NAME = "Caeser And His Friends";
+    public final static String APP_VERSION = "1.10";
 
     private final static String CURRENT_DIR = System.getProperty("user.dir");
 
@@ -22,7 +22,7 @@ public class SystemConstant {
     public final static String[] SYMMETRIC_ALGORITHM = {"AES","DES","DESede"};
     public final static int[] SYMMETRIC_KEY_SIZE = {256, 64, 192};
     public final static String[] SYMMETRIC_MODEL = {"ECB","CBC"};
-    public final static String[] SYMMETRIC_PADDING_METHOD = {"PKCS5Padding ","NoPadding"};
+    public final static String[] SYMMETRIC_PADDING_METHOD = {"PKCS5Padding","NoPadding"};
 
     public final static String SYMMETRIC_EXTENSION = "env";
 

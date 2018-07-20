@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * 功能面板抽象类
+ * Abstract Class, Function Panel
  * @author Frankel.Y
  * Created in 10:48 2018/5/19
  */
@@ -34,7 +34,7 @@ public abstract class FunctionPanel extends JPanel{
      * Add Components
      * created in 23:28 2018/5/3
      */
-    public void addComponent() {
+    private void addComponent() {
         this.add(getUpPanel(), BorderLayout.NORTH);
         this.add(getCenterPanel(), BorderLayout.CENTER);
     }
@@ -61,7 +61,7 @@ public abstract class FunctionPanel extends JPanel{
     public abstract void addListener();
 
     /**
-     * 改变语言，实时更新UI
+     * Change Language, Update UI
      * created in 0:25 2018/5/5
      */
     public void refreshLocale(){

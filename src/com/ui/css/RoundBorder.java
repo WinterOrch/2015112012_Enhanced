@@ -21,11 +21,6 @@ public class RoundBorder implements Border {
         strokeWidth = width;
     }
 
-    public RoundBorder() {
-        this.color = Color.BLACK;
-        strokeWidth = (float)1;
-    }
-
     public Insets getBorderInsets(Component c) {
         return new Insets(0, 0, 0, 0);
     }

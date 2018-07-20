@@ -101,27 +101,4 @@ public class PaddingFrame {
         txtInput.setLayout(new BorderLayout());
         txtInput.add(cbInput, BorderLayout.SOUTH);
     }
-
-    public static void main(String[] args) throws Exception {
-        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        JFrame frame = new JFrame();
-        frame.setTitle("Auto Completion Test");
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setBounds(200, 200, 500, 400);
-
-        ArrayList<String> series = new ArrayList<>();
-        series.add("WZ111");
-        series.add("WZ132");
-		/*Locale[] locales = Locale.getAvailableLocales();
-		for (int i = 0; i < locales.length; i++) {
-			String item = locales[i].getDisplayName();
-			items.add(item);
-		}*/
-        JTextField txtInput = new JTextField();
-        setupAutoComplete(txtInput, series);
-        txtInput.setColumns(30);
-        frame.getContentPane().setLayout(new FlowLayout());
-        frame.getContentPane().add(txtInput, BorderLayout.NORTH);
-        frame.setVisible(true);
-    }
 }

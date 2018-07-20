@@ -15,24 +15,18 @@ public class AboutPanel extends JPanel {
     private final JLabel labelURL = new JLabel("https://github.com/WinterOrch/2015112012_Enhanced");
 
     /**
-     * 构造
+     * Constructor
      */
     public AboutPanel() {
         initialize();
         addComponent();
     }
 
-    /**
-     * 初始化
-     */
     private void initialize() {
         this.setBackground(UIConstant.MAIN_BACK_COLOR);
         this.setLayout(new BorderLayout());
     }
 
-    /**
-     * 添加组件
-     */
     private void addComponent() {
 
         this.add(getCenterPanel(), BorderLayout.CENTER);
@@ -40,35 +34,29 @@ public class AboutPanel extends JPanel {
 
     }
 
-    /**
-     * 中部面板
-     *
-     * @return
-     */
     private JPanel getCenterPanel() {
-        // 中间面板
+        // Center Panel
         JPanel panelCenter = new JPanel();
         panelCenter.setBackground(UIConstant.MAIN_BACK_COLOR);
         panelCenter.setLayout(new GridLayout(3, 1));
 
-        // 图标、版本Grid
+        // Icon And Version
         JPanel panelGridIcon = new JPanel();
         panelGridIcon.setBackground(UIConstant.MAIN_BACK_COLOR);
         panelGridIcon.setLayout(new FlowLayout(FlowLayout.LEFT, UIConstant.MAIN_H_GAP, 0));
 
-        // 初始化组件
+        // Initialize Components
         NaviIconButton icon = new NaviIconButton(UIConstant.GITHUB, UIConstant.GITHUB,
                 UIConstant.GITHUB, "");
 
-
-        // 字体
+        // Font
         labelURL.setFont(UIConstant.FONT_URI);
 
-        // 大小
+        // Set Size
         Dimension size = new Dimension(300, 40);
         labelURL.setPreferredSize(size);
 
-        // 组合元素
+        // Add Elements
         panelGridIcon.add(icon);
         panelGridIcon.add(labelURL);
 
@@ -94,7 +82,6 @@ public class AboutPanel extends JPanel {
         });
 
         panelCenter.add(panelGridIcon);
-        // panelCenter.add(panelGridHelp);
         return panelCenter;
     }
 

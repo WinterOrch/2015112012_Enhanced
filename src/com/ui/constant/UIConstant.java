@@ -44,7 +44,7 @@ public class UIConstant {
      * Size And Color of Navigation Bar
      */
     public final static Color NAVI_BAR_BACK_COLOR = new Color(33, 150, 243);
-    public final static Color PRESSED_BACK_COLOR = new Color(48, 168, 243);
+    public final static Color PRESSED_BACK_COLOR = new Color(20, 129, 243);
     public final static Color LIST_BACK_COLOR = new Color(62, 62, 62);
     public final static Color ROLL_OVER_COLOR = new Color(97, 176, 239);
     public final static int NAVI_BAR_WIDTH = 48;
@@ -69,18 +69,16 @@ public class UIConstant {
     public final static ImageIcon ICON_KDC_READY = new ImageIcon(MainWindow.class.getResource("/icon/kdc-ready.png"));
     public final static ImageIcon ICON_KDC_PRESSED = new ImageIcon(MainWindow.class.getResource("/icon/kdc-pressed.png"));
 
+    public final static ImageIcon ICON_CAESER = new ImageIcon(MainWindow.class.getResource("/icon/caeser-normal.png"));
+    public final static ImageIcon ICON_CAESER_READY = new ImageIcon(MainWindow.class.getResource("/icon/caeser-ready.png"));
+    public final static ImageIcon ICON_CAESER_PRESSED = new ImageIcon(MainWindow.class.getResource("/icon/caeser-pressed.png"));
+
     public final static ImageIcon QUESTION = new ImageIcon(MainWindow.class.getResource("/icon/help-circle.png"));
 
     public final static ImageIcon GITHUB = new ImageIcon(MainWindow.class.getResource("/icon/github-circle.png"));
 
     public final static ImageIcon ICON_GET = new ImageIcon(MainWindow.class.getResource("/icon/down.png"));
 
-    public final static URL PLACE_HOLDER = MainWindow.class.getResource("/icon/placeholder.png");
-
-    /**
-     * Background Color of Table Line
-     */
-    public final static Color TABLE_LINE_COLOR = new Color(229, 229, 229);
 
     /**
      * Style
@@ -89,8 +87,6 @@ public class UIConstant {
     public final static int MAIN_H_GAP = 25;
     // Size of List Label
     public final static Dimension LIST_ITEM_SIZE = new Dimension(245, 48);
-    // Size of Label
-    public final static Dimension LABLE_SIZE = new Dimension(1300, 30);
     // Size of Item Label
     public final static Dimension LABLE_SIZE_ITEM = new Dimension(93, 28);
     // Size of Item Text Field
@@ -99,13 +95,8 @@ public class UIConstant {
     public final static Dimension PROGRESS_BAR_SIZE = new Dimension(825,5);
     public final static Dimension TEXT_AREA_SIZE = new Dimension(650,200);
     public final static Dimension TABLE_SIZE = new Dimension(850,400);
-    public final static Dimension PICTURE_SIZE = new Dimension(300,200);
     // Size of Items In Full-Size Window
     public final static Dimension FULL_TEXT_FIELD_SIZE = new Dimension(600,24);
-    // Size of Radio
-    public final static Dimension RADIO_SIZE = new Dimension(1300, 60);
-    // Size of Advanced Option Pane
-    public final static Dimension PANEL_ITEM_SIZE = new Dimension(1300, 40);
     // Layout
     public final static FlowLayout listPanelLayout = new FlowLayout(FlowLayout.LEFT, 30, 13);
 

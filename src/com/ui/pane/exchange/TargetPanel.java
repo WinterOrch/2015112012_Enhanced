@@ -220,8 +220,7 @@ public class TargetPanel extends JPanel {
                 tip.setText(PropertiesLocale.getProperty("UI.EXCHANGE.TARGET.PUBLIC_KEY.EMPTY"));
                 JOptionPane.showMessageDialog(MainWindow.frame,PropertiesLocale.getProperty("UI.EXCHANGE.TARGET.PUBLIC_KEY.EMPTY"),
                         PropertiesLocale.getProperty("UI.MESSAGE.WARNING"),JOptionPane.WARNING_MESSAGE);
-            }
-            else {
+            }else {
                 try {
                     generatedKeyMap = DiffieHellman.generateTargetKeyPair(inputPassWordText.getText().trim(),
                             KeyPairUtility.getDHPublicKey(publicKeyMap));

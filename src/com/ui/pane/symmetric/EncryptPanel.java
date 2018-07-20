@@ -263,14 +263,20 @@ public class EncryptPanel extends JPanel {
                     algorithmComboBox.setSelectedIndex(0);
                     PropertiesLocale.changeAlgorithm("SYMMETRIC.ALGORITHM",SystemConstant.SYMMETRIC_ALGORITHM[0]);
                     isKeyFileLoaded = true;
+                    inputPassWordText.setText(HexConver.byte2HexStr(KeyPairUtility.getSessionKey(key,SystemConstant.SYMMETRIC_ALGORITHM[0]).getEncoded(),
+                            KeyPairUtility.getSessionKey(key,SystemConstant.SYMMETRIC_ALGORITHM[0]).getEncoded().length));
                 }else if(key.containsKey(SystemConstant.SYMMETRIC_ALGORITHM[1] + KeyPairUtility.SESSION_KEY)) {
                     algorithmComboBox.setSelectedIndex(1);
                     PropertiesLocale.changeAlgorithm("SYMMETRIC.ALGORITHM",SystemConstant.SYMMETRIC_ALGORITHM[1]);
                     isKeyFileLoaded = true;
+                    inputPassWordText.setText(HexConver.byte2HexStr(KeyPairUtility.getSessionKey(key,SystemConstant.SYMMETRIC_ALGORITHM[1]).getEncoded(),
+                            KeyPairUtility.getSessionKey(key,SystemConstant.SYMMETRIC_ALGORITHM[0]).getEncoded().length));
                 }else if(key.containsKey(SystemConstant.SYMMETRIC_ALGORITHM[2] + KeyPairUtility.SESSION_KEY)) {
                     algorithmComboBox.setSelectedIndex(2);
                     PropertiesLocale.changeAlgorithm("SYMMETRIC.ALGORITHM",SystemConstant.SYMMETRIC_ALGORITHM[2]);
                     isKeyFileLoaded = true;
+                    inputPassWordText.setText(HexConver.byte2HexStr(KeyPairUtility.getSessionKey(key,SystemConstant.SYMMETRIC_ALGORITHM[2]).getEncoded(),
+                            KeyPairUtility.getSessionKey(key,SystemConstant.SYMMETRIC_ALGORITHM[0]).getEncoded().length));
                 }else {
                     isKeyFileLoaded = false;
                     tip.setText(PropertiesLocale.getProperty("UI.SYMMETRIC.ENCRYPT.SK.SELECT.FAILURE"));

@@ -12,6 +12,12 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.IOException;
 
+/**
+ * Main Entrance
+ * @author Frankel.Y
+ * Created in 0:37 2018/4/30
+ * Modified by
+ */
 public class MainWindow {
     public static JFrame frame;
 
@@ -19,6 +25,7 @@ public class MainWindow {
     public static ExchangePanel exchangePanel;
     public static SymmetricPanel symmetricPanel;
     public static KDCPanel kdcPanel;
+    public static CaeserPanel caeserPanel;
 
     public static SettingPanel settingPanel;
 
@@ -62,6 +69,7 @@ public class MainWindow {
         symmetricPanel = new SymmetricPanel();
         settingPanel = new SettingPanel();
         kdcPanel = new KDCPanel();
+        caeserPanel = new CaeserPanel();
 
         mainPanel.add(naviBar, BorderLayout.WEST);
 
@@ -128,7 +136,7 @@ public class MainWindow {
         exchangePanel.refreshLocale();
         symmetricPanel.refreshLocale();
         kdcPanel.refreshLocale();
-        //TODO
+        caeserPanel.refreshLocale();
     }
 
     /**
